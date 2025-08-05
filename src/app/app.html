@@ -105,9 +105,23 @@
   <p *ngSwitchDefault>No valid fruit selected</p> <!-- optional fallback -->
 </div>
 
-
+<!-- -----------------------Custom Pipe----------------- -->
 <h1>Custom Pipe </h1>
 <p>{{myPipe | test : "param1" :"param2":"param3" }}</p>
+
+<!-- -----------------------Template Reference----------------- -->
+
+<input #name type="text" (input)="buttonClicked(name.value)" placeholder="Enter Your Name"  />
+
+<h4>value : {{name.value}}</h4>
+
+<h4>placeholder : {{name.placeholder}}</h4>
+
+<p>Full input object: {{ templateData }}</p>
+
+
+
+
 
 
 </main>

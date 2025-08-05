@@ -92,5 +92,17 @@ choice:string="Banana";
 myPipe:string="hello world";
 
 
+// template reference-----------
+
+templateData="";
+
+buttonClicked(msg:string)
+{
+  this.templateData=msg;
+  console.log(this.templateData)
+}
+
+
+
 
 }
