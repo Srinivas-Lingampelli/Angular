@@ -9,4 +9,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('Demo');
+  public name:String="Srinivas Lingampelli"
+
+  Greeting( name:string )
+  {
+    return "Welcome! "+ name;
+  }
+
 }
