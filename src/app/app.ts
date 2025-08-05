@@ -3,12 +3,14 @@ import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BlobOptions } from 'buffer';
+import { TestPipe } from './test-pipe';
+
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,FormsModule,CommonModule],
+  imports: [RouterOutlet,FormsModule,CommonModule,TestPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -84,6 +86,10 @@ movies=["A","B","C","D","E"]
 
 
 choice:string="Banana";
+
+// -----------------Custom Pipe------------
+
+myPipe:string="hello world";
 
 
 
