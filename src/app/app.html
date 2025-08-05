@@ -61,6 +61,36 @@
 <p>Your Selected the  : {{optionSelected}}</p>
 
 
+<!-- ----------iF Directive--------------- -->
+
+
+<h1 *ngIf="ngif" >Hello THis is NgIf Directive </h1>
+
+<h1 *ngIf="age>18; else eligibity">
+
+  Your are Eligible to Vote
+
+</h1>
+
+<ng-template #eligibity>
+  <h1>You are Not Eligible to Vote</h1>
+</ng-template>
+
+
+<!-- ----------ngFor Directive--------------- -->
+
+<table border="1">
+  <thead>
+    <td>SNo</td>
+    <td>Movies</td>
+  </thead>
+  <tr *ngFor="let m of movies;let i=index" >
+<td>{{i}}</td>
+<td>{{m}}</td>
+  </tr>
+</table>
+
+
 
 </main>
 

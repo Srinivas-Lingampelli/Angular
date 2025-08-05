@@ -1,12 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { BlobOptions } from 'buffer';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,FormsModule],
+  imports: [RouterOutlet,FormsModule,CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -66,6 +68,17 @@ console.log(this.city);
 // ------------Two way Binding---------------
 
 optionSelected:string="";
+
+// -----------------------ngIf----------------
+
+ngif:boolean=true;
+
+age:number=19;
+
+
+// -----------------------ngFor----------------
+
+movies=["A","B","C","D","E"]
 
 
 
