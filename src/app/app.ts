@@ -83,5 +83,8 @@ movies=["A","B","C","D","E"]
 
 
 
+choice:string="Banana";
+
+
 
 }

@@ -31,7 +31,7 @@
     <h1>Counter : {{count}}</h1>
 
     <button (click)="Increment()" >Increment</button>
-      <button (click)="Decrement()" >Increment</button>
+      <button (click)="Decrement()" >Decrement</button>
 
       <input  type="text" (input)="onChange($event)" placeholder="Enter your name" />
 
@@ -81,14 +81,30 @@
 
 <table border="1">
   <thead>
-    <td>SNo</td>
-    <td>Movies</td>
+    <tr>
+      <th>SNo</th>
+      <th>Movies</th>
+    </tr>
   </thead>
-  <tr *ngFor="let m of movies;let i=index" >
-<td>{{i}}</td>
-<td>{{m}}</td>
-  </tr>
+  <tbody>
+    <tr *ngFor="let m of movies; let i = index">
+      <td>{{ i + 1 }}</td> <!-- Typically serial numbers start from 1 -->
+      <td>{{ m }}</td>
+    </tr>
+  </tbody>
 </table>
+
+
+
+<div [ngSwitch]="choice">
+  <h1 *ngSwitchCase="'Apple'">Apple is Selected</h1>
+  <p *ngSwitchCase="'Banana'">Banana is Selected</p>
+  <p *ngSwitchCase="'carrot'">Carrot is Selected</p>
+  <p *ngSwitchCase="'DOngly'">Dongly is Selected</p>
+  <p *ngSwitchCase="'Mango'">Mango is Selected</p>
+  <p *ngSwitchDefault>No valid fruit selected</p> <!-- optional fallback -->
+</div>
+
 
 
 
