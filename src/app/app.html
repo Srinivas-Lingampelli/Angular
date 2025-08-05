@@ -5,6 +5,24 @@
   <p>Welcome! </p>
   <h1>{{name}}</h1>
   <h1>{{Greeting("Ganesh")}}</h1>
+
+  <p>{{date}}</p>
+<p>{{time}}</p>
+
+  <!-- //  -------------Property Binding---------- -->
+
+  <button [disabled]="isEnabled" >Submit</button>
+
+  <img [src]="image_url" />
+  <input  type="text" [hidden]="isHidden" placeholder="Enter name" />
+
+    <!-- //  -------------class Binding---------- -->
+
+  <h1 [class]="isActive?'active':'inactive'">This is Class Binding</h1>
+
+  <h2 [class]="{c1:true,c2:true}" > Multiple class Binding</h2>
+
+  <h3>Its Style Binding</h3>
 </main>
 
 

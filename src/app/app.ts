@@ -16,4 +16,17 @@ export class App {
     return "Welcome! "+ name;
   }
 
+  date:String=new Date().toLocaleDateString();
+   time:String=new Date().toLocaleTimeString();
+
+  //  -------------Property Binding----------
+
+  isEnabled:boolean=true;
+  isHidden:boolean=true;
+
+  image_url="https://tse2.mm.bing.net/th/id/OIP.8gGK6KfclbrYsg5CgDeIJwHaE1?rs=1&pid=ImgDetMain&o=7&rm=3";
+
+  // -----------------Class Binding--------------
+  isActive:boolean=false;
+
 }
