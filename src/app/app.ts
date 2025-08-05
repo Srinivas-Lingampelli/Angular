@@ -1,16 +1,17 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal,Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BlobOptions } from 'buffer';
 import { TestPipe } from './test-pipe';
 
+import { Header } from './header/header';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,FormsModule,CommonModule,TestPipe],
+  imports: [RouterOutlet,FormsModule,CommonModule,TestPipe,Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -95,12 +96,15 @@ myPipe:string="hello world";
 // template reference-----------
 
 templateData="";
+placeHolder="";
 
 buttonClicked(msg:string)
 {
   this.templateData=msg;
   console.log(this.templateData)
 }
+
+dataFromparent="hello Child";
 
 
 
