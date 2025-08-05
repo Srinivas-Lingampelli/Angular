@@ -23,6 +23,20 @@
   <h2 [class]="{c1:true,c2:true}" > Multiple class Binding</h2>
 
   <h3>Its Style Binding</h3>
+
+
+  
+    <!-- //  -------------Event Binding---------- -->
+
+    <h1>Counter : {{count}}</h1>
+
+    <button (click)="Increment()" >Increment</button>
+      <button (click)="Decrement()" >Increment</button>
+
+      <input  type="text" (input)="onChange($event)" placeholder="Enter your name" />
+
+      <p>Your Name :{{Nick_name}}</p>
+
 </main>
 
 

@@ -28,5 +28,27 @@ export class App {
 
   // -----------------Class Binding--------------
   isActive:boolean=false;
+  count:number=0;
+
+  Increment()
+  {
+this.count+=1;
+  }
+
+    Decrement()
+  {
+this.count-=1;
+  }
+  
+  Nick_name:String="";
+
+  onChange(e:any)
+  {
+    console.log(e);
+    console.log(e.target);
+    console.log(e.target.value);
+    this.Nick_name=e.target.value;
+  }
+
 
 }
