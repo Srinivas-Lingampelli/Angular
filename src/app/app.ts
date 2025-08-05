@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -39,8 +42,10 @@ this.count+=1;
   {
 this.count-=1;
   }
-  
+
   Nick_name:String="";
+  
+    city:string="Hyderabad";
 
   onChange(e:any)
   {
@@ -48,7 +53,22 @@ this.count-=1;
     console.log(e.target);
     console.log(e.target.value);
     this.Nick_name=e.target.value;
+
+    console.log(this.city);
   }
+
+  onchng(e:any)
+  {
+console.log(this.city);
+  }
+
+
+// ------------Two way Binding---------------
+
+optionSelected:string="";
+
+
+
 
 
 }

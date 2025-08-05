@@ -37,6 +37,31 @@
 
       <p>Your Name :{{Nick_name}}</p>
 
+
+
+         <!-- //  -------------Two Way Binding---------- -->
+
+       
+<input type="text" (input)="onchng($event)" [(ngModel)]="city" placeholder="Enter your name :" />
+
+<p>City : {{city}}</p>
+
+<!-- --------------Example on two Way binding-------- -->
+
+<select [(ngModel)]="optionSelected"   >
+
+  <option value="Angular" >Angular</option>
+   <option value="React">React</option>
+    <option value="Vue">Vue</option>
+     <option value="JavaScript">JavaScript</option>
+
+
+</select>
+
+<p>Your Selected the  : {{optionSelected}}</p>
+
+
+
 </main>
 
 
