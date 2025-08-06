@@ -29,6 +29,17 @@ export class Header {
 templateRefData="Hello this is Template REference Data";
 
 
+// -------------------------------ViewChild ---------------------
+
+
+data="Demo of viewChild comp commu";
+
+passToParent()
+{
+  return this.data;
+}
+
+
 
 
 

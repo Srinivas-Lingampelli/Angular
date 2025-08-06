@@ -7,6 +7,9 @@ import { TestPipe } from './test-pipe';
 
 import { Header } from './header/header';
 
+import { ViewChild } from '@angular/core';
+
+
 
 
 @Component({
@@ -120,5 +123,14 @@ cdata:string="";
 
 
 pa_to_Child:string="";
+
+
+// --------------------ViewChild Decorator-----------------------
+@ViewChild(Header) header1: any
+
+test()
+{
+  console.log(this.header1.data)
+}
 
 }
