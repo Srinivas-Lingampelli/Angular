@@ -121,12 +121,16 @@
 
 
 
-<app-header [childData]="dataFromparent" [num]="numbers" [pdata]="pa_to_Child"  (customEmiter)="cdata=$event"  ></app-header>
+<app-header #child [childData]="dataFromparent" [num]="numbers" [pdata]="pa_to_Child"  (customEmiter)="cdata=$event"  ></app-header>
 <p>child-parent : {{cdata}}</p>
 
 <input type="text"  placeholder="Enter data to send child" [(ngModel)]="pa_to_Child" />
 
 <p>Parent com : {{pa_to_Child}}</p>
+
+<h5>--------------Accessing Child using Template Reference--------------</h5>
+
+{{child.templateRefData}}
 
 </main>
 
