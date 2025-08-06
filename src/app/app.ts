@@ -107,6 +107,18 @@ buttonClicked(msg:string)
 dataFromparent="hello Child";
 
 
+// ---------------input Decorator-----------------------
 
+
+
+numbers="this is Numbers";
+
+
+
+// ---------------Output Decorator-----------------------
+cdata:string="";
+
+
+pa_to_Child:string="";
 
 }

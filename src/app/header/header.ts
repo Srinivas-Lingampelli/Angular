@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output,EventEmitter } from '@angular/core';
+// import { EventEmitter } from 'node:stream';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,23 @@ import { Component, Input } from '@angular/core';
 export class Header {
 
   @Input() childData:string ="";
+
+  @Input() num:string="";
+@Output() customEmiter = new EventEmitter<string>(); // or number, or a custom interface
+
+
+
+@Input() pdata:string="";
+  message:string="data from Child->P";
+
+  passtoParent()
+{
+  this.message=this.pdata;
+  this.customEmiter.emit(this.message);
+}
+
+
+
+
 
 }
