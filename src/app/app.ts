@@ -1,6 +1,6 @@
 import { Component, signal,Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BlobOptions } from 'buffer';
 import { TestPipe } from './test-pipe';
@@ -8,13 +8,17 @@ import { TestPipe } from './test-pipe';
 import { Header } from './header/header';
 
 import { ViewChild } from '@angular/core';
+import { RouterModule} from '@angular/router';
+import { About } from './about/about';
+import { Contact } from './contact/contact';
+import { Home } from './home/home';
+import { PageNotFound } from './page-not-found/page-not-found';
 
-
-
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,FormsModule,CommonModule,TestPipe,Header],
+   standalone: true,
+  imports: [RouterOutlet,RouterModule,FormsModule,CommonModule,TestPipe,Header,About,Contact,PageNotFound],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -132,5 +136,18 @@ test()
 {
   console.log(this.header1.data)
 }
+
+
+@ViewChild('domTreeEle') divEle:any;
+
+changeDiv()
+{
+
+  this.divEle.nativeElement.style.background="blue"
+   console.log(this.divEle.nativeElement.textContent);
+  console.log(this.divEle.nativeElement.InnerHTML);
+  // this.divEl
+}
+
 
 }

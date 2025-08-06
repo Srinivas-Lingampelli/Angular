@@ -1,6 +1,18 @@
 
 
 <main class="main">
+   <nav>
+      <a routerLink="/">Home</a> |
+      <a routerLink="about">About</a> |
+        <a routerLink="contact">Contact</a>|
+            <a routerLink="gallery">Gallery</a>|
+         
+    </nav>
+
+
+    <router-outlet />
+
+
   <h1>Angular Tutorials</h1>
   <p>Welcome! </p>
   <h1>{{name}}</h1>
@@ -136,9 +148,12 @@
 
 <button (click)="test()" >View Child Data</button>
 
+<div #domTreeEle >This is example of DOM manipulation</div>
+<button (click)="changeDiv()">Change</button>
+
 </main>
 
 
 
 
-<router-outlet />
+
