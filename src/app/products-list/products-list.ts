@@ -25,6 +25,13 @@ export class ProductsList implements OnInit {
   }
 
   ngOnInit() {
+        // this.route.paramMap.subscribe(
+    //   params=>{
+
+    //     console.log("Params : "+params)
+    //      this.urlId=params.get('id');
+    //   }
+    // )
     this.urlId = Number(this.route.snapshot.paramMap.get("id"));
     this.selectedProduct = this.getProductById(this.urlId);
     console.log("URL ID:", this.urlId);

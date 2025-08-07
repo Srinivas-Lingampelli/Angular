@@ -5,6 +5,7 @@ import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
 import { Gallery } from './gallery/gallery';
 import { ProductsList } from './products-list/products-list';
+import { MensStore } from './mens-store/mens-store';
 
 export const routes: Routes = [
       {
@@ -22,7 +23,10 @@ export const routes: Routes = [
     {
     path:"products",component:ProductsList
   },
-      {
+     {
+    path:"Styles",component:MensStore
+  },
+  {
     path:"products/:id",component:ProductsList
   },
    {
