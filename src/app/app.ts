@@ -13,6 +13,7 @@ import { About } from './about/about';
 import { Contact } from './contact/contact';
 import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
+import { Router } from '@angular/router';
 
 import { RouterLink } from '@angular/router';
 import { Test } from './test';
@@ -150,6 +151,31 @@ changeDiv()
   console.log(this.divEle.nativeElement.InnerHTML);
   // this.divEl
 }
+
+
+constructor(private r:Router)
+{
+
+}
+ngOnInit()
+{
+  
+}
+
+navigateee()
+{
+this.r.navigate(["products",2])
+}
+
+navigatestyle()
+{
+this.r.navigate(["Styles"],{
+  queryParams:{
+    'category':"Mens Store",'size':32
+  }
+})
+}
+
 
 
 }
