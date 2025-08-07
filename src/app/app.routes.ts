@@ -4,6 +4,7 @@ import { Contact } from './contact/contact';
 import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
 import { Gallery } from './gallery/gallery';
+import { ProductsList } from './products-list/products-list';
 
 export const routes: Routes = [
       {
@@ -17,6 +18,12 @@ export const routes: Routes = [
   },
     {
     path:"gallery",component:Gallery
+  },
+    {
+    path:"products",component:ProductsList
+  },
+      {
+    path:"products/:id",component:ProductsList
   },
    {
     path:"**",component:PageNotFound

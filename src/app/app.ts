@@ -20,7 +20,7 @@ import { Test } from './test';
   selector: 'app-root',
    standalone: true,
    providers: [Test],
-  imports: [RouterOutlet,RouterModule,FormsModule,CommonModule,TestPipe,Header,About,Contact,PageNotFound],
+  imports: [RouterOutlet,RouterModule,FormsModule,CommonModule,TestPipe,Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
