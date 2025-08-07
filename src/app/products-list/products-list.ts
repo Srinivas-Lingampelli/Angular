@@ -1,35 +1,33 @@
-import { Component } from '@angular/core';
+// src/app/products-list/products-list.component.ts
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Test } from '../test';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-products-list',
-  imports: [],
+  imports:[CommonModule],
   templateUrl: './products-list.html',
-  styleUrl: './products-list.css'
+  styleUrls: ['./products-list.css']
 })
-export class ProductsList {
+export class ProductsList implements OnInit {
 
-  constructor(private route:ActivatedRoute)
-  {
-    
+  products: { id: number; name: string; price: number; category: string; }[] = [];
+  urlId: number = 0;
+  selectedProduct: any;
+
+  constructor(private route: ActivatedRoute, public ts: Test) {
+    this.products = ts.products;
   }
 
-  urlId:any;
-
-  ngOnInit()
-  {
-
-    // this.route.paramMap.subscribe(
-    //   params=>{
-
-    //     console.log("Params : "+params)
-    //      this.urlId=params.get('id');
-    //   }
-    // )
-
-    this.urlId=this.route.snapshot.paramMap.get("id");
-
+  getProductById(id: number) {
+    return this.products.find(p => p.id === id);
   }
 
+  ngOnInit() {
+    this.urlId = Number(this.route.snapshot.paramMap.get("id"));
+    this.selectedProduct = this.getProductById(this.urlId);
+    console.log("URL ID:", this.urlId);
+    console.log("Found product:", this.selectedProduct);
+  }
 }
-

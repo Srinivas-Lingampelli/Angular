@@ -1,3 +1,14 @@
 <p>products-list works!</p>
 
 <p>Your User Id : {{urlId}}</p>
+<!-- src/app/products-list/products-list.html -->
+<div *ngIf="selectedProduct; else notFound">
+  <h2>Product Details</h2>
+  <p><strong>Name:</strong> {{ selectedProduct.name }}</p>
+  <p><strong>Price:</strong> ₹{{ selectedProduct.price }}</p>
+  <p><strong>Category:</strong> {{ selectedProduct.category }}</p>
+</div>
+
+<ng-template #notFound>
+  <p>Product not found.</p>
+</ng-template>
