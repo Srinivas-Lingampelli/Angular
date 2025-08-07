@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { copyFileSync } from 'fs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mens-store',
@@ -12,7 +13,7 @@ export class MensStore {
 category: any;
   size: any;
 
-constructor(private route:ActivatedRoute )
+constructor(private route:ActivatedRoute,private r:Router )
 {
 
 }
@@ -29,5 +30,6 @@ ngOnInit()
   )
   console.log(this.category);
 }
+
 
 }

@@ -6,13 +6,19 @@ import { PageNotFound } from './page-not-found/page-not-found';
 import { Gallery } from './gallery/gallery';
 import { ProductsList } from './products-list/products-list';
 import { MensStore } from './mens-store/mens-store';
+import { Child } from './child/child';
 
 export const routes: Routes = [
       {
     path:'',component:Home
   },
    {
-    path:"about",component:About
+    path:"about",component:About,
+     children:[
+      {
+        path:"child",component:Child
+      }
+    ]
   },
    {
     path:"contact",component:Contact
@@ -24,7 +30,8 @@ export const routes: Routes = [
     path:"products",component:ProductsList
   },
      {
-    path:"Styles",component:MensStore
+    path:"Styles",component:MensStore,
+   
   },
   {
     path:"products/:id",component:ProductsList
