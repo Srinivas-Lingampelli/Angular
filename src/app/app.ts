@@ -15,9 +15,11 @@ import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
 
 import { RouterLink } from '@angular/router';
+import { Test } from './test';
 @Component({
   selector: 'app-root',
    standalone: true,
+   providers: [Test],
   imports: [RouterOutlet,RouterModule,FormsModule,CommonModule,TestPipe,Header,About,Contact,PageNotFound],
   templateUrl: './app.html',
   styleUrl: './app.css'
