@@ -1,1 +1,27 @@
 <p>contact works!</p>
+<h1> Click the button to Fetch the Data</h1>
+<button  (click)="getData()" >Get Data</button>
+
+<p>-----------Fetched Data----------------- </p>
+
+<p>{{data |json }}</p>
+
+<table  border="1" >
+    <tr>
+       
+            <td>So</td>
+            <td>title</td>
+            <td>price</td>
+            <td>Description</td>
+       
+  </tr>
+        <tr *ngFor="let p of data">
+            <td>{{p.id}}</td>
+             <td>{{p.title}}</td>
+              <td>{{p.price}}</td>
+               <td>{{p.description}}</td>
+
+        </tr>
+  
+</table>
+

@@ -14,14 +14,17 @@ import { Contact } from './contact/contact';
 import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
 import { Router } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 import { RouterLink } from '@angular/router';
 import { Test } from './test';
+
 @Component({
   selector: 'app-root',
    standalone: true,
    providers: [Test],
-  imports: [RouterOutlet,RouterModule,FormsModule,CommonModule,TestPipe,Header],
+  imports: [RouterOutlet,RouterModule,FormsModule,CommonModule,TestPipe,Header,HttpClientModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
