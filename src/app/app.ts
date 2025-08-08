@@ -19,11 +19,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { RouterLink } from '@angular/router';
 import { Test } from './test';
+import { Auth } from './auth';
 
 @Component({
   selector: 'app-root',
    standalone: true,
-   providers: [Test],
+   providers: [Test,Auth],
   imports: [RouterOutlet,RouterModule,FormsModule,CommonModule,TestPipe,Header,HttpClientModule],
   templateUrl: './app.html',
   styleUrl: './app.css'

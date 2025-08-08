@@ -1,21 +1,20 @@
-
-
 <main class="main">
-   <nav>
-      <a routerLink="/">Home</a> |
-      <a routerLink="about">About</a> |
-        <a routerLink="contact">Contact</a>|
-            <a routerLink="gallery">Gallery</a>|
-              <a routerLink="products">products</a>|
-            <a routerLink="/products" [queryParams]="{'category':'men'}">Zudio</a>|
-            <a routerLink="/Styles" [queryParams]="{'category':'men'}">Men Styles</a>
-            <button (click)="navigateee()"  >Navigate</button>
-                 <button (click)="navigatestyle()"  >Navigate to Styles</button>
-         
-    </nav>
+  <nav>
+    <a routerLink="/">Home</a> |
+    <a routerLink="about">About</a> |
+    <a routerLink="contact">Contact</a>|
+    <a routerLink="gallery">Gallery</a>|
+    <a routerLink="products">products</a>|
+    <a routerLink="/products" [queryParams]="{'category':'men'}">Zudio</a>|
+    <a routerLink="/Styles" [queryParams]="{'category':'men'}">Men Styles</a>
+    <button (click)="navigateee()">Navigate</button>
+    <button (click)="navigatestyle()">Navigate to Styles</button> |
+     <a routerLink="journals">Journals</a>|
+
+  </nav>
 
 
-    <router-outlet />
+  <router-outlet />
 
 
   <h1>Angular Tutorials</h1>
@@ -24,141 +23,137 @@
   <h1>{{Greeting("Ganesh")}}</h1>
 
   <p>{{date}}</p>
-<p>{{time}}</p>
+  <p>{{time}}</p>
 
   <!-- //  -------------Property Binding---------- -->
 
-  <button [disabled]="isEnabled" >Submit</button>
+  <button [disabled]="isEnabled">Submit</button>
 
   <img [src]="image_url" />
-  <input  type="text" [hidden]="isHidden" placeholder="Enter name" />
+  <input type="text" [hidden]="isHidden" placeholder="Enter name" />
 
-    <!-- //  -------------class Binding---------- -->
+  <!-- //  -------------class Binding---------- -->
 
   <h1 [class]="isActive?'active':'inactive'">This is Class Binding</h1>
 
-  <h2 [class]="{c1:true,c2:true}" > Multiple class Binding</h2>
+  <h2 [class]="{c1:true,c2:true}"> Multiple class Binding</h2>
 
   <h3>Its Style Binding</h3>
 
 
-  
-    <!-- //  -------------Event Binding---------- -->
 
-    <h1>Counter : {{count}}</h1>
+  <!-- //  -------------Event Binding---------- -->
 
-    <button (click)="Increment()" >Increment</button>
-      <button (click)="Decrement()" >Decrement</button>
+  <h1>Counter : {{count}}</h1>
 
-      <input  type="text" (input)="onChange($event)" placeholder="Enter your name" />
+  <button (click)="Increment()">Increment</button>
+  <button (click)="Decrement()">Decrement</button>
 
-      <p>Your Name :{{Nick_name}}</p>
+  <input type="text" (input)="onChange($event)" placeholder="Enter your name" />
+
+  <p>Your Name :{{Nick_name}}</p>
 
 
 
-         <!-- //  -------------Two Way Binding---------- -->
+  <!-- //  -------------Two Way Binding---------- -->
 
-       
-<input type="text" (input)="onchng($event)" [(ngModel)]="city" placeholder="Enter your name :" />
 
-<p>City : {{city}}</p>
+  <input type="text" (input)="onchng($event)" [(ngModel)]="city" placeholder="Enter your name :" />
 
-<!-- --------------Example on two Way binding-------- -->
+  <p>City : {{city}}</p>
 
-<select [(ngModel)]="optionSelected"   >
+  <!-- --------------Example on two Way binding-------- -->
 
-  <option value="Angular" >Angular</option>
-   <option value="React">React</option>
+  <select [(ngModel)]="optionSelected">
+
+    <option value="Angular">Angular</option>
+    <option value="React">React</option>
     <option value="Vue">Vue</option>
-     <option value="JavaScript">JavaScript</option>
+    <option value="JavaScript">JavaScript</option>
 
 
-</select>
+  </select>
 
-<p>Your Selected the  : {{optionSelected}}</p>
-
-
-<!-- ----------iF Directive--------------- -->
+  <p>Your Selected the : {{optionSelected}}</p>
 
 
-<h1 *ngIf="ngif" >Hello THis is NgIf Directive </h1>
-
-<h1 *ngIf="age>18; else eligibity">
-
-  Your are Eligible to Vote
-
-</h1>
-
-<ng-template #eligibity>
-  <h1>You are Not Eligible to Vote</h1>
-</ng-template>
+  <!-- ----------iF Directive--------------- -->
 
 
-<!-- ----------ngFor Directive--------------- -->
+  <h1 *ngIf="ngif">Hello THis is NgIf Directive </h1>
 
-<table border="1">
-  <thead>
-    <tr>
-      <th>SNo</th>
-      <th>Movies</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let m of movies; let i = index">
-      <td>{{ i + 1 }}</td> <!-- Typically serial numbers start from 1 -->
-      <td>{{ m }}</td>
-    </tr>
-  </tbody>
-</table>
+  <h1 *ngIf="age>18; else eligibity">
+
+    Your are Eligible to Vote
+
+  </h1>
+
+  <ng-template #eligibity>
+    <h1>You are Not Eligible to Vote</h1>
+  </ng-template>
 
 
+  <!-- ----------ngFor Directive--------------- -->
 
-<div [ngSwitch]="choice">
-  <h1 *ngSwitchCase="'Apple'">Apple is Selected</h1>
-  <p *ngSwitchCase="'Banana'">Banana is Selected</p>
-  <p *ngSwitchCase="'carrot'">Carrot is Selected</p>
-  <p *ngSwitchCase="'DOngly'">Dongly is Selected</p>
-  <p *ngSwitchCase="'Mango'">Mango is Selected</p>
-  <p *ngSwitchDefault>No valid fruit selected</p> <!-- optional fallback -->
-</div>
-
-<!-- -----------------------Custom Pipe----------------- -->
-<h1>Custom Pipe </h1>
-<p>{{myPipe | test : "param1" :"param2":"param3" }}</p>
-
-<!-- -----------------------Template Reference----------------- -->
-
-<input #name type="text" (input)="buttonClicked(name.value)" placeholder="Enter Your Name"  />
-
-<h4>value : {{name.value}}</h4>
-
-<h4>placeholder : {{name.placeholder}}</h4>
-
-<p>Full input object: {{ templateData }}</p>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>SNo</th>
+        <th>Movies</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of movies; let i = index">
+        <td>{{ i + 1 }}</td> <!-- Typically serial numbers start from 1 -->
+        <td>{{ m }}</td>
+      </tr>
+    </tbody>
+  </table>
 
 
 
-<app-header #child [childData]="dataFromparent" [num]="numbers" [pdata]="pa_to_Child"  (customEmiter)="cdata=$event"  ></app-header>
-<p>child-parent : {{cdata}}</p>
+  <div [ngSwitch]="choice">
+    <h1 *ngSwitchCase="'Apple'">Apple is Selected</h1>
+    <p *ngSwitchCase="'Banana'">Banana is Selected</p>
+    <p *ngSwitchCase="'carrot'">Carrot is Selected</p>
+    <p *ngSwitchCase="'DOngly'">Dongly is Selected</p>
+    <p *ngSwitchCase="'Mango'">Mango is Selected</p>
+    <p *ngSwitchDefault>No valid fruit selected</p> <!-- optional fallback -->
+  </div>
 
-<input type="text"  placeholder="Enter data to send child" [(ngModel)]="pa_to_Child" />
+  <!-- -----------------------Custom Pipe----------------- -->
+  <h1>Custom Pipe </h1>
+  <p>{{myPipe | test : "param1" :"param2":"param3" }}</p>
 
-<p>Parent com : {{pa_to_Child}}</p>
+  <!-- -----------------------Template Reference----------------- -->
 
-<h5>--------------Accessing Child using Template Reference--------------</h5>
+  <input #name type="text" (input)="buttonClicked(name.value)" placeholder="Enter Your Name" />
 
-{{child.templateRefData}}
+  <h4>value : {{name.value}}</h4>
 
-<h3>ViewChild Decorator</h3>
+  <h4>placeholder : {{name.placeholder}}</h4>
 
-<button (click)="test()" >View Child Data</button>
+  <p>Full input object: {{ templateData }}</p>
 
-<div #domTreeEle >This is example of DOM manipulation</div>
-<button (click)="changeDiv()">Change</button>
+
+
+  <app-header #child [childData]="dataFromparent" [num]="numbers" [pdata]="pa_to_Child"
+    (customEmiter)="cdata=$event"></app-header>
+  <p>child-parent : {{cdata}}</p>
+
+  <input type="text" placeholder="Enter data to send child" [(ngModel)]="pa_to_Child" />
+
+  <p>Parent com : {{pa_to_Child}}</p>
+
+  <h5>--------------Accessing Child using Template Reference--------------</h5>
+
+  {{child.templateRefData}}
+
+  <h3>ViewChild Decorator</h3>
+
+  <button (click)="test()">View Child Data</button>
+
+  <div #domTreeEle>This is example of DOM manipulation</div>
+  <button (click)="changeDiv()">Change</button>
 
 </main>
-
-
-
-
-

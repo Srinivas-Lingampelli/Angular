@@ -8,6 +8,7 @@ import { ProductsList } from './products-list/products-list';
 import { MensStore } from './mens-store/mens-store';
 import { Child } from './child/child';
 import { JournalList } from './journal-list/journal-list';
+import { Auth } from './auth';
 
 export const routes: Routes = [
       {
@@ -28,7 +29,7 @@ export const routes: Routes = [
     path:"journals",component:JournalList
   },
     {
-    path:"gallery",component:Gallery
+    path:"gallery",component:Gallery,canActivate:[Auth]
   },
     {
     path:"products",component:ProductsList
@@ -37,6 +38,7 @@ export const routes: Routes = [
     path:"Styles",component:MensStore,
    
   },
+
   {
     path:"products/:id",component:ProductsList
   },
