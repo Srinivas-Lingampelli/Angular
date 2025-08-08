@@ -7,6 +7,7 @@ import { Gallery } from './gallery/gallery';
 import { ProductsList } from './products-list/products-list';
 import { MensStore } from './mens-store/mens-store';
 import { Child } from './child/child';
+import { JournalList } from './journal-list/journal-list';
 
 export const routes: Routes = [
       {
@@ -22,6 +23,9 @@ export const routes: Routes = [
   },
    {
     path:"contact",component:Contact
+  },
+    {
+    path:"journals",component:JournalList
   },
     {
     path:"gallery",component:Gallery

@@ -1,0 +1,22 @@
+<p>journal-list works!</p>
+
+<button (click)="getData()" >Get journal-list</button>
+
+
+<div class="card-container">
+  <div class="journal-card" *ngFor="let journal of journals">
+    <div class="card-header">
+      <h3 class="card-title">{{ journal.title }}</h3>
+      <p class="card-date">{{ journal.date  }}</p>
+    </div>
+    <div class="card-content">
+      <p>{{ journal.content }}</p>
+    </div>
+      <button   >EDIT</button>
+<button (click)="deleteTheJournal(journal._id.$oid)">DELETE</button>
+
+
+
+  </div>
+
+</div>
