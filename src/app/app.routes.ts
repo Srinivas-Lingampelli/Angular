@@ -9,6 +9,7 @@ import { MensStore } from './mens-store/mens-store';
 import { Child } from './child/child';
 import { JournalList } from './journal-list/journal-list';
 import { Auth } from './auth';
+import { Login } from './login/login';
 
 export const routes: Routes = [
       {
@@ -36,6 +37,10 @@ export const routes: Routes = [
   },
      {
     path:"Styles",component:MensStore,
+   
+  },
+       {
+    path:"login",component:Login,
    
   },
 

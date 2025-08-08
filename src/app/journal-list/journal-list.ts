@@ -13,13 +13,12 @@ import { copyFileSync } from 'fs';
   styleUrl: './journal-list.css'
 })
 export class JournalList {
- 
+
   hover = false;
 
 
-  constructor(private http:HttpClient)
-  {
- 
+  constructor(private http: HttpClient) {
+
   }
 
   journals: any;
@@ -32,19 +31,21 @@ export class JournalList {
       });
   }
 
-deleteTheJournal(journalId: number) {
-  this.http.delete(`http://localhost:8080/journals/id/${journalId}`).subscribe({
-    next: () => {
-      console.log('Journal Deleted');
-    },
-    error: err => {
-      console.error('Delete failed:', err);
-    }
-  });
-}
+  deleteTheJournal(journalId: number) {
+    this.http.delete(`http://localhost:8080/journals/id/${journalId}`).subscribe({
+      next: () => {
+        console.log('Journal Deleted');
+      },
+      error: err => {
+        console.error('Delete failed:', err);
+      }
+    });
 
 
- 
+  }
+
+
+
 
 
 
